@@ -1,0 +1,10 @@
+﻿.view{
+    display:flex;
+    flex-direction:row;
+    
+    flex-wrap:wrap;
+    flex-basis:auto;
+}
+.flex-item{
+    flex:.05 .05 auto;
+}

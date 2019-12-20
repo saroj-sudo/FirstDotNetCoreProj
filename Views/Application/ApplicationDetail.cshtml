@@ -1,0 +1,52 @@
+﻿@model Application
+<link href="~/css/applicationdetail.css" rel="stylesheet" />
+<div class="container application" id="content">
+    <div class="datefield">
+        Date: @Model.Date
+    </div>
+    <br />
+    <div>
+        To the @Model.ReceiverName,
+    </div>
+    <div>
+        @Model.ReceiverComanyName
+    </div><div>
+        @Model.ReceiverAddress
+    </div>
+    <br /><br />
+    <div class="subject">Subject: @Model.Subject</div>
+    <br />
+    <div>
+        Dear Sir,<br />
+        <div class="body"><span class="para-change"></span>  @Model.Body</div>
+        <br /><br />
+
+    </div>
+    <div class="sender-align">
+        <div>Yours Sincerely,</div>
+        <div>@Model.Sender</div>
+    </div>
+
+</div>
+<div id="editor"></div>
+<button id="cmd">Download PDF</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+
+<script>
+    var doc = new jsPDF();
+    var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+            return true;
+        }
+    };
+
+    $('#cmd').click(function () {
+        doc.fromHTML($('#content').html(), 15, 15, {
+            'width': 170,
+            'elementHandlers': specialElementHandlers
+        });
+        doc.save('sample-file.pdf');
+    });
+</script>

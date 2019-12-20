@@ -1,0 +1,39 @@
+﻿@model List<Application>
+    <link href="~/css/applicationdetail.css" rel="stylesheet" />
+<div class="container">
+    @{
+        foreach (var app in Model)
+        {
+            
+            <div class="container application mb-3">
+                <div class="datefield">
+                    Date: @app.Date
+                </div>
+                <br />
+                <div>
+                    To the @app.ReceiverName,
+                </div>
+                <div>
+                    @app.ReceiverComanyName
+                </div><div>
+                    @app.ReceiverAddress
+                </div>
+                <br /><br />
+                <div class="subject">Subject: @app.Subject</div>
+                <br />
+                <div>
+                    Dear Sir,<br />
+                    <div class="body"><span class="para-change"></span>  @app.Body</div>
+                    <br /><br />
+
+                </div>
+                <div class="sender-align">
+                    <div>Yours Sincerely,</div>
+                    <div>@app.Sender</div>
+                </div>
+
+            </div>
+
+        }
+    }
+</div>

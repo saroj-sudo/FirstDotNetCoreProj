@@ -1,0 +1,13 @@
+﻿@model List<Profile>
+    <link href="~/css/gallery.css" rel="stylesheet" />
+<div class="container view">
+    @{ foreach (var p in Model)
+        {
+        <div class="flex-item">
+            <p>@p.FullName</p>
+            <img src="@p.ProfilePicture" height="200" />
+        </div>
+    
+            }
+        }
+</div>

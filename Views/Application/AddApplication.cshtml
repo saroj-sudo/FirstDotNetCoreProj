@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "AddApplication";
+}
+@model Application
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <h4>Write Application</h4>
+        <form asp-action="AddApplication" method="post">
+            <div class="form-group">
+                <label>To The.</label>
+                <input asp-for="ReceiverName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Company Name</label>
+                <input asp-for="ReceiverComanyName" class="form-control"/>
+            </div><div class="form-group">
+                <label>Company Address</label>
+                <input asp-for="ReceiverAddress" class="form-control"/>
+            </div><div class="form-group">
+                <label>Subject</label>
+                <input asp-for="Subject" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Body Of Application</label>
+                <textarea asp-for="Body" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Sender Name</label>
+                <input asp-for="Sender" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-primary form-control">Submit</button>
+        </form>
+    </div>
+</div>

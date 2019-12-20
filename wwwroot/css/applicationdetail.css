@@ -1,0 +1,25 @@
+﻿.datefield{
+    text-align:end;
+}
+.sender-align{
+    text-align:end;
+}
+.para-change{
+    width:50px;
+    background-color:black;
+    height:10px;
+    content:"";
+}
+.body{
+    position:relative;
+}
+.application{
+    padding:1em;
+    width:800px;
+    border:1px solid grey;
+    border-radius:5px;
+    box-shadow:grey 2px 2px 5px ;
+}
+.subject{
+    text-align:center;
+}
